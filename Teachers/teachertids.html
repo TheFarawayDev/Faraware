@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Fullscreen Example</title>
+    <style>
+        #content {
+            color: black;
+        }
+    </style>
+</head>
+<body>
+    <button onclick="toggleFullscreen()">Toggle Fullscreen</button>
+    <div id="content">
+        <p>Enter Fullscreen To See Content</p>
+    </div>
+
+    <script>
+        function toggleFullscreen() {
+            var content = document.getElementById("content");
+            if (document.fullscreenElement || document.webkitFullscreenElement || document.mozFullScreenElement || document.msFullscreenElement) {
+                // Exit fullscreen
+                if (document.exitFullscreen) {
+                    document.exitFullscreen();
+                } else if (document.webkitExitFullscreen) {
+                    document.webkitExitFullscreen();
+                } else if (document.mozCancelFullScreen) {
+                    document.mozCancelFullScreen();
+                } else if (document.msExitFullscreen) {
+                    document.msExitFullscreen();
+                }
+                content.innerHTML = "<p>Enter Fullscreen To See Content</p>";
+            } else {
+                // Enter fullscreen
+                if (content.requestFullscreen) {
+                    content.requestFullscreen();
+                } else if (content.webkitRequestFullscreen) {
+                    content.webkitRequestFullscreen();
+                } else if (content.mozRequestFullScreen) {
+                    content.mozRequestFullScreen();
+                } else if (content.msRequestFullscreen) {
+                    content.msRequestFullscreen();
+                }
+                document.addEventListener("fullscreenchange", function() {
+                    if (document.fullscreenElement || document.webkitFullscreenElement || document.mozFullScreenElement || document.msFullscreenElement) {
+                        content.innerHTML = "<img src='path/to/image.jpg'><p>Your content goes here</p>";
+                        content.style.color = "white"; // Set text color to white when in fullscreen
+                    } else {
+                        content.innerHTML = "<p>Enter Fullscreen To See Content</p>";
+                        content.style.color = "black"; // Set text color to black when not in fullscreen
+                    }
+                });
+            }
+        }
+    </script>
+</body>
+</html>
