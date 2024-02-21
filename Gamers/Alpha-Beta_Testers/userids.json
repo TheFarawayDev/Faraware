@@ -1,6 +1,8 @@
-{
-    "username": "cayden",
-    "password": "stover",
-    "name": "Cayden Stover",
-    "status": "active"
-}
+[
+    {
+        "username": "cayden",
+        "password": "stover",
+        "name": "Cayden Stover",
+        "status": "active"
+    }
+]
