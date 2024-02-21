@@ -84,7 +84,7 @@
             <button onclick="login()">Login</button>
         </div>
         <div class="form-group">
-            <button style="display: block !important;" onclick="openGame()">Play in Fullscreen</button>
+            <button style="display: block !important;" onclick="openGame()">Use In Fullscreen</button>
         </div>
         <div id="result"></div> <!-- Added a div to display the result -->
     </div>
@@ -93,7 +93,7 @@
             var username = document.getElementById("username").value;
             var password = document.getElementById("password").value;
 
-            var response = await fetch('https://thefarawaydev.github.io/Faraware/Gamers/Alpha-Beta_Testers/testerids.json');
+            var response = await fetch('https://thefarawaydev.github.io/Faraware/Gamers/Alpha-Beta_Testers/userids.json');
             var users = await response.json();
 
             var user = users.find(function (user) {
