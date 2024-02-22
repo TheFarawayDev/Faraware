@@ -4,5 +4,11 @@
         "password": "stover",
         "name": "Cayden Stover",
         "status": "active"
+    },
+    {
+        "username": "garet",
+        "password": "sayers",
+        "name": "Garet Sayers",
+        "status": "active"
     }
 ]
